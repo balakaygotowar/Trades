@@ -1,0 +1,72 @@
+Retrieves the contents of file1 from the Trades GitHub repository owned by balakaygotowar. This action returns the file’s base64-encoded content and metadata, allowing you to view or process the file directly from the repository.
+
+openapi: 3.1.0
+info:
+  title: GitHub File Reader
+  description: Fetch the content of a file named `file1` from the GitHub repository `Trades`.
+  version: 1.0.0
+servers:
+  - url: https://api.github.com
+    description: GitHub API
+paths:
+  /repos/balakaygotowar/Trades/contents/file1:
+    get:
+      operationId: readFile1
+      summary: Fetch the content of `file1` from the GitHub repository `Trades`.
+      description: Retrieve the content of the file `file1` from the repository `Trades` owned by `balakaygotowar` using the GitHub API.
+      parameters: []
+      responses:
+        '200':
+          description: Successful response with file content.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    description: The name of the file.
+                    example: file1
+                  path:
+                    type: string
+                    description: The path of the file.
+                    example: file1
+                  content:
+                    type: string
+                    description: The base64-encoded content of the file.
+                    example: SGVsbG8sIHdvcmxkIQ==
+                  encoding:
+                    type: string
+                    description: The encoding of the file content.
+                    example: base64
+        '404':
+          description: File not found in the repository.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Error message.
+                    example: Not Found
+        '403':
+          description: Forbidden - invalid credentials or insufficient permissions.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Error message.
+                    example: Resource access denied.
+      security:
+        - bearerAuth: []
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: token
+  schemas: {}
