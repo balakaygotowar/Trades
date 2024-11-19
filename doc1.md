@@ -90,9 +90,7 @@ This document encapsulates the key aspects of our recent conversation regarding 
 
 ## Code Snippets to Be Used
 
-### 1. **Class Diagram Updates**
-
-#### `StrategyManager` Class Method Renaming
+### 1. **Class Diagrams**
 
 ```python
 class StrategyManager:
@@ -129,9 +127,7 @@ class StrategyManager:
         return signals
 ```
 
-### 2. **Sequence Diagram Updates**
-
-#### Renamed Function Calls and Removed Redundancies
+### 2. **Sequence Diagrams**
 
 ```plantuml
 @startuml
@@ -192,9 +188,7 @@ Main --> ErrorHandler: handle_errors(e)
 @enduml
 ```
 
-### 3. **Activity Diagram Updates**
-
-#### Renamed "Generate Signals" to "Generate Order Signals"
+### 3. **Activity Diagrams**
 
 ```plantuml
 @startuml
@@ -236,9 +230,7 @@ stop
 @enduml
 ```
 
-### 4. **Class Diagram Updates**
-
-#### Integration of `IndicatorCalculator` within `DataProcessor`
+### 4. **Class Diagrams**
 
 ```plantuml
 @startuml
@@ -337,9 +329,7 @@ TradeManager --> DataRetriever
 @enduml
 ```
 
-### 5. **State Diagram Updates**
-
-#### Renamed to "Generate Order Signals"
+### 5. **State Diagrams**
 
 ```plantuml
 @startuml
@@ -368,4 +358,3 @@ Error --> Idle : Handle Error
 
 @enduml
 ```
-This document serves as a foundational reference to encapsulate the progress and decisions made thus far, facilitating efficient and informed future collaborations.
